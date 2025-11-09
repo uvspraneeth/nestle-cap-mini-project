@@ -10,7 +10,7 @@ using { com.nestle.manufacturing.pm.notificationitems as ni} from '../db/pm/tran
 
 service NestlePPPMPublicService {
 
-    entity ProductOrders as projection on po.ProductionOrder;
+    entity ProductionOrders as projection on po.ProductionOrder;
     entity OrderOperations as projection on oo.OrderOperation;
     entity OperationComponents as projection on oc.OperationComponent;
     entity MaintanenceTasks as projection on mt.MaintenanceTask;
