@@ -2,6 +2,7 @@ namespace com.nestle.manufacturing.pp.productorders;
 
 using { com.nestle.manufacturing.pp.materials.MaterialMaster as MaterialMaster } from '../master/Materials';
 using { com.nestle.manufacturing.pp.workcenters.WorkCenterMaster as WorkCenterMaster } from '../master/WorkCenters';
+using { com.nestle.manufacturing.pp.orderoperations.OrderOperation } from './OrderOperations';
 
 using {
     nestle.manufacturing.common.Plant,
@@ -45,5 +46,6 @@ entity ProductOrder {
     status : OrderStatus;
     priority : PriorityLevels;
     createdBy : String(30);
-    createdOn : Timestamp
+    createdOn : Timestamp;
+    operations : Composition of many OrderOperation on operations.order = $self
 }

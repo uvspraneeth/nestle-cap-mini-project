@@ -1,0 +1,187 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "com.nestle.pp.plantplanning",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.19.3",
+      "toolsId": "89ebbc93-e30b-4c12-814d-cc5bcaf429c4"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/nestle-pppmpublic/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.142.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.nestle.pp.plantplanning.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "ProductOrdersList",
+          "target": "ProductOrdersList"
+        },
+        {
+          "pattern": "ProductOrders({key}):?query:",
+          "name": "ProductOrdersObjectPage",
+          "target": "ProductOrdersObjectPage"
+        },
+        {
+          "pattern": "ProductOrders({key})/operations({key2}):?query:",
+          "name": "OrderOperationsObjectPage",
+          "target": "OrderOperationsObjectPage"
+        },
+        {
+          "name": "ProductOrders_operations_componentsObjectPage",
+          "pattern": "ProductOrders({key})/operations({key2})/components({componentsKey}):?query:",
+          "target": "ProductOrders_operations_componentsObjectPage"
+        }
+      ],
+      "targets": {
+        "ProductOrdersList": {
+          "type": "Component",
+          "id": "ProductOrdersList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/ProductOrders",
+              "variantManagement": "Page",
+              "navigation": {
+                "ProductOrders": {
+                  "detail": {
+                    "route": "ProductOrdersObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ProductOrdersObjectPage": {
+          "type": "Component",
+          "id": "ProductOrdersObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/ProductOrders",
+              "navigation": {
+                "operations": {
+                  "detail": {
+                    "route": "OrderOperationsObjectPage"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "OrderOperationsObjectPage": {
+          "type": "Component",
+          "id": "OrderOperationsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/ProductOrders/operations",
+              "navigation": {
+                "components": {
+                  "detail": {
+                    "route": "ProductOrders_operations_componentsObjectPage"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ProductOrders_operations_componentsObjectPage": {
+          "type": "Component",
+          "id": "ProductOrders_operations_componentsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/ProductOrders/operations/components"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}

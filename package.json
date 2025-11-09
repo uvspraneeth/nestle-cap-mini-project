@@ -5,11 +5,13 @@
   "dependencies": {
     "@sap/cds": "^9",
     "@sap/cds-dk": "^9.4.3",
+    "@sap/ux-specification": "^1.136.9",
     "express": "^4",
     "sqlite3": "^5.1.7"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-plant-planning": "cds watch --open com.nestle.pp.plantplanning/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "cds": {
     "requires": {
@@ -25,6 +27,15 @@
   },
   "private": true,
   "devDependencies": {
-    "@cap-js/sqlite": "^2.0.4"
-  }
+    "@cap-js/sqlite": "^2.0.4",
+    "@sap/ux-ui5-tooling": "^1.19.3",
+    "cds-plugin-ui5": "^0.13.0"
+  },
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/pp_and_pm",
+    "app/plant-planning"
+  ]
 }
