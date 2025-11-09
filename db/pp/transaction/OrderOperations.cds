@@ -1,6 +1,6 @@
 namespace com.nestle.manufacturing.pp.orderoperations;
 using { com.nestle.manufacturing.pp.workcenters.WorkCenterMaster as WorkCenterMaster } from '../master/WorkCenters';
-using { com.nestle.manufacturing.pp.productorders.ProductOrder as ProductOrder } from './ProdOrders';
+using { com.nestle.manufacturing.pp.productionorders.ProductionOrder as ProductionOrder } from './ProdOrders';
 using { com.nestle.manufacturing.pp.operationcomponents.OperationComponent } from './OperationComponents';
 
 /*
@@ -25,7 +25,7 @@ type OperationStatus : String enum {
 
 entity OrderOperation {
     key ID : String(7);
-    order : Association to ProductOrder;
+    order : Association to ProductionOrder;
     seqNo : Integer;
     workcenter : Association to WorkCenterMaster;
     operationText : String;

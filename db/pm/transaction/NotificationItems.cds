@@ -2,9 +2,9 @@ namespace com.nestle.manufacturing.pm.notificationitems;
 
 
 using {} from '../../common/types';
-using {
-    com.nestle.manufacturing.pm.maintnotifications.MaintNotification as MaintNotifications
-    } from './MaintNotification';
+using {com.nestle.manufacturing.pm.maintnotifications.MaintNotification as MaintNotifications} from './MaintNotification';
+
+using {com.nestle.manufacturing.pm.maintenancetasks.MaintenanceTask} from './MaintanenceTasks';
 
 
 /*
@@ -25,7 +25,7 @@ Purpose
 Allows structured diagnosis under a single maintenance report — multiple defects can be logged per notification.
 */
 
-type NotfiStatus : String enum {
+type NotfiStatus   : String enum {
     Pending;
     Analyzed;
     Closed;
@@ -38,12 +38,15 @@ type NotifSeverity : String enum {
 };
 
 entity NotificationItem {
-    key ID : String(7);
-    notification : Association to MaintNotifications;
-    damageCode : String;
-    causeCode : String;
-    description :String;
-    severity : NotifSeverity;
-    isSafetyRelated : Boolean;
-    status : NotfiStatus
+    key ID              : String(7);
+        notification    : Association to MaintNotifications;
+        damageCode      : String;
+        causeCode       : String;
+        description     : String;
+        severity        : NotifSeverity;
+        isSafetyRelated : Boolean;
+        status          : NotfiStatus;
+        tasks           : Composition of many MaintenanceTask
+                              on tasks.items = $self
+
 }

@@ -11,7 +11,8 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-plant-planning": "cds watch --open com.nestle.pp.plantplanning/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-plant-planning": "cds watch --open com.nestle.pp.plantplanning/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-plant-maintenance": "cds watch --open com.nestle.pm.plantmaintenance/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "cds": {
     "requires": {
@@ -36,6 +37,7 @@
   ],
   "sapux": [
     "app/pp_and_pm",
-    "app/plant-planning"
+    "app/plant-planning",
+    "app/plant-maintenance"
   ]
 }

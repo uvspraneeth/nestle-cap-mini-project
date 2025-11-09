@@ -2,6 +2,7 @@ namespace com.nestle.manufacturing.pm.maintnotifications;
 
 using {com.nestle.manufacturing.pm.equipements.Equipment} from '../master/Equipments';
 using {com.nestle.manufacturing.pm.functionalLocs.FunctionalLocation} from '../master/FunctionalLocation';
+using {com.nestle.manufacturing.pm.notificationitems.NotificationItem} from './NotificationItems';
 
 using {
     nestle.manufacturing.common.PriorityLevels,
@@ -41,7 +42,7 @@ type MaintenanceStatus : String enum {
 
 
 entity MaintNotification {
-    key ID    : String(7);
+    key ID         : String(7);
         notifType  : NotificationTypes;
         notifDate  : Date;
         equipment  : Association to Equipment;
@@ -52,5 +53,7 @@ entity MaintNotification {
         status     : MaintenanceStatus;
         plant      : Plant;
         reportedBy : String;
-        reportedOn : Date
+        reportedOn : Date;
+        items      : Composition of many NotificationItem
+                         on items.notification = $self
 }

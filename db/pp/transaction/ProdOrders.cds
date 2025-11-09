@@ -1,14 +1,15 @@
-namespace com.nestle.manufacturing.pp.productorders;
+namespace com.nestle.manufacturing.pp.productionorders;
 
-using { com.nestle.manufacturing.pp.materials.MaterialMaster as MaterialMaster } from '../master/Materials';
-using { com.nestle.manufacturing.pp.workcenters.WorkCenterMaster as WorkCenterMaster } from '../master/WorkCenters';
-using { com.nestle.manufacturing.pp.orderoperations.OrderOperation } from './OrderOperations';
+using {com.nestle.manufacturing.pp.materials.MaterialMaster as MaterialMaster} from '../master/Materials';
+using {com.nestle.manufacturing.pp.workcenters.WorkCenterMaster as WorkCenterMaster} from '../master/WorkCenters';
+using {com.nestle.manufacturing.pp.orderoperations.OrderOperation} from './OrderOperations';
 
 using {
     nestle.manufacturing.common.Plant,
     nestle.manufacturing.common.UoM,
     nestle.manufacturing.common.PriorityLevels
 } from '../../common/types';
+
 /*
 Field	Description
 OrderID (PK)	Unique production order number
@@ -33,19 +34,20 @@ type OrderStatus : String(15) enum {
 };
 
 
-entity ProductOrder {
-    key ID : String(7);
-    material : Association to MaterialMaster;
-    plant : Plant;
-    workCenter : Association to WorkCenterMaster;
-    orderTypeCode : String(4);
-    orderQty : Integer;
-    unitOfMeasure : UoM;
-    startDate : Date;
-    dueDate :Date;
-    status : OrderStatus;
-    priority : PriorityLevels;
-    createdBy : String(30);
-    createdOn : Timestamp;
-    operations : Composition of many OrderOperation on operations.order = $self
+entity ProductionOrder {
+    key ID            : String(7);
+        material      : Association to MaterialMaster;
+        plant         : Plant;
+        workCenter    : Association to WorkCenterMaster;
+        orderTypeCode : String(4);
+        orderQty      : Integer;
+        unitOfMeasure : UoM;
+        startDate     : Date;
+        dueDate       : Date;
+        status        : OrderStatus;
+        priority      : PriorityLevels;
+        createdBy     : String(30);
+        createdOn     : Timestamp;
+        operations    : Composition of many OrderOperation
+                            on operations.order = $self
 }

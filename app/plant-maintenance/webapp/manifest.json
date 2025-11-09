@@ -1,0 +1,164 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "com.nestle.pm.plantmaintenance",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.19.3",
+      "toolsId": "ca587a53-41cc-40ac-a2b0-a0fd0b8f3e91"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/nestle-pppmpublic/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.142.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.nestle.pm.plantmaintenance.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "MaintNotificationsList",
+          "target": "MaintNotificationsList"
+        },
+        {
+          "pattern": "MaintNotifications({key}):?query:",
+          "name": "MaintNotificationsObjectPage",
+          "target": "MaintNotificationsObjectPage"
+        },
+        {
+          "pattern": "MaintNotifications({key})/items({key2}):?query:",
+          "name": "NotificationItemsObjectPage",
+          "target": "NotificationItemsObjectPage"
+        }
+      ],
+      "targets": {
+        "MaintNotificationsList": {
+          "type": "Component",
+          "id": "MaintNotificationsList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/MaintNotifications",
+              "variantManagement": "Page",
+              "navigation": {
+                "MaintNotifications": {
+                  "detail": {
+                    "route": "MaintNotificationsObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "MaintNotificationsObjectPage": {
+          "type": "Component",
+          "id": "MaintNotificationsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/MaintNotifications",
+              "navigation": {
+                "items": {
+                  "detail": {
+                    "route": "NotificationItemsObjectPage"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "NotificationItemsObjectPage": {
+          "type": "Component",
+          "id": "NotificationItemsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/MaintNotifications/items"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}
