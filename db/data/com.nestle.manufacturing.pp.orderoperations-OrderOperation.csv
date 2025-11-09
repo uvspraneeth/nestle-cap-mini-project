@@ -1,0 +1,6 @@
+ID,order_ID,seqNo,workcenter_ID,operationText,stdTimeMin,startDate,endDate,status,supervisor
+OP001,PO1001,10,WC01,Mixing,120,2025-11-01,2025-11-02,Completed,Ravi Kumar
+OP002,PO1001,20,WC02,Filling,90,2025-11-03,2025-11-05,In Process,Sneha Patil
+OP003,PO1001,30,WC03,Packaging,60,2025-11-05,2025-11-06,Pending,Naveen Joshi
+OP004,PO1002,10,WC04,Mixing,100,2025-11-05,2025-11-06,In Process,Ravi Kumar
+OP005,PO1003,10,WC02,Filling,80,2025-11-02,2025-11-04,Completed,Anita Iyer

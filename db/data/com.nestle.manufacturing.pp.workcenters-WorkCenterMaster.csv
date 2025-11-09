@@ -1,0 +1,6 @@
+ID,description,plant,costCenter,category,capacityPerShift,isActive
+WC01,Mixing Line 01,IN01,CC001,Machine,500,TRUE
+WC02,Filling Line 02,IN01,CC002,Packaging Line,800,TRUE
+WC03,Packaging Line 03,IN01,CC003,Packaging Line,700,TRUE
+WC04,Mixing Line 02,IN02,CC004,Machine,600,TRUE
+WC05,Filling Line 03,IN02,CC005,Packaging Line,850,TRUE

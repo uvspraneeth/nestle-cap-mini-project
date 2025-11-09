@@ -1,0 +1,6 @@
+ID,description,plant,locationType,IsActive
+LOC01,Filling Area 1,IN01,Area,TRUE
+LOC02,Packaging Zone A,IN01,Section,TRUE
+LOC03,Compressor Room,IN02,Building,TRUE
+LOC04,Mixing Hall,IN01,Area,TRUE
+LOC05,Weighing Station,IN02,Section,TRUE

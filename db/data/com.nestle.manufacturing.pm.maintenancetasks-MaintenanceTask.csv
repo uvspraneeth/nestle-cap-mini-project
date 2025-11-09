@@ -1,0 +1,6 @@
+ID,items_ID,taskText,assignedTo,startDate,endDate,durationHrs,UoM,status
+MT1001,NI1001,Replace seal ring,Technician01,2025-11-06,2025-11-06,2,H,In Progress
+MT1002,NI1002,Replace corroded pipe,Technician02,2025-11-07,2025-11-08,3,H,Open
+MT1003,NI1003,Apply lubricant,Technician03,2025-11-07,2025-11-07,1,H,Open
+MT1004,NI1004,Realign compressor shaft,Technician04,2025-11-08,2025-11-09,4,H,Planned
+MT1005,NI1005,Tighten sensor wiring,Technician05,2025-11-07,2025-11-07,2,H,Open

@@ -1,0 +1,6 @@
+ID,description,functionalLocation,plant,manufacturer,modelNumber,commissionDate,status
+EQ001,Filling Machine 1,LOC01,IN01,Bosch,FM-01,2020-03-15,Active
+EQ002,Packaging Machine 2,LOC02,IN01,Siemens,PM-02,2021-06-10,Under Maintenance
+EQ003,Compressor Unit A,LOC03,IN02,Hitachi,CP-10,2019-11-22,Active
+EQ004,Blender Line 01,LOC04,IN01,TetraPak,BL-01,2022-01-05,Active
+EQ005,Weighing Scale 05,LOC05,IN02,Mettler,WS-05,2020-09-19,Active

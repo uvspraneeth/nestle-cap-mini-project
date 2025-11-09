@@ -1,0 +1,5 @@
+ID,notifType,notifDate,equipment_ID,funcLoc_ID,priority,shortText,LongText,status,plant,reportedBy,reportedOn
+MN1001,Breakdown,2025-11-05,EQ001,LOC01,High,Pressure leak,Air leak in compressor line,In Process,IN01,Ankit Sharma,2025-11-05
+MN1002,Preventive,2025-11-06,EQ004,LOC04,Medium,Routine lubrication,Lubrication check for blender,New,IN01,Deepa Menon,2025-11-06
+MN1003,Inspection,2025-11-06,EQ003,LOC03,Low,Noise check,Inspect compressor noise level,New,IN02,Rahul Iyer,2025-11-06
+MN1004,Breakdown,2025-11-07,EQ002,LOC02,High,Sensor fault,Packaging sensor malfunction,New,IN01,Suresh Babu,2025-11-07

@@ -1,0 +1,6 @@
+ID,notification_ID,damageCode,causeCode,description,severity,isSafetyRelated,status
+NI1001,MN1001,LEAK01,WORN01,Seal ring leakage,Moderate,TRUE,Pending
+NI1002,MN1001,PIPE02,CORR01,Pipe corrosion,Severe,TRUE,Pending
+NI1003,MN1002,LUBE01,SCHED01,Missed lubrication schedule,Minor,FALSE,Pending
+NI1004,MN1003,NOISE01,ALIGN01,Compressor misalignment,Moderate,FALSE,Analyzed
+NI1005,MN1004,SENSOR01,WIR01,Loose wiring on sensor,Severe,TRUE,Pending

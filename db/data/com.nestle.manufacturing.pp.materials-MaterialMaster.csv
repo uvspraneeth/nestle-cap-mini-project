@@ -1,0 +1,9 @@
+ID,materialDescription,UoM,materialGroup,plant,materialType,grossWeight,netWeight,isActive
+MAT001,Nescafe Coffee Powder,KG,Dairy Ingredients,IN01,RM,100,100,TRUE
+MAT002,Sugar Granules,KG,Dairy Ingredients,IN01,RM,50,50,TRUE
+MAT003,Empty Sachet 200g,EA,Packaging,IN01,PM,2,2,TRUE
+MAT004,Nescafe Sachet 200g,EA,Dairy Ingredients,IN01,FG,200,200,TRUE
+MAT005,Carton Box,EA,Packaging,IN01,PM,5,5,TRUE
+MAT006,Coffee Premix,KG,Dairy Ingredients,IN02,RM,120,120,TRUE
+MAT007,Milk Powder,KG,Dairy Ingredients,IN02,RM,80,80,TRUE
+MAT008,Finished Coffee Jar 500g,EA,Dairy Ingredients,IN02,FG,500,500,TRUE
