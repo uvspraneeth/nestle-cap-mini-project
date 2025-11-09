@@ -4,11 +4,9 @@
   "description": "A simple CAP project.",
   "dependencies": {
     "@sap/cds": "^9",
+    "@sap/cds-dk": "^9.4.3",
     "express": "^4",
     "sqlite3": "^5.1.7"
-  },
-  "devDependencies": {
-    "@cap-js/sqlite": "^2.0.4"
   },
   "scripts": {
     "start": "cds-serve"
@@ -25,5 +23,8 @@
       }
     }
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@cap-js/sqlite": "^2.0.4"
+  }
 }
